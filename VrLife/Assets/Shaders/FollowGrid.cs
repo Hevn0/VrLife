@@ -8,8 +8,10 @@ public class FollowGrid : MonoBehaviour
     public GameObject gridObject;
     public int gridSize;
     public float gridScale;
-    public Transform follower;
+    public Transform follower,leader;
     public Material mat;
+    public float snapDistance;
+    
     
     private void OnEnable()
     {
@@ -18,12 +20,20 @@ public class FollowGrid : MonoBehaviour
 
     private void Update()
     {
-        mat.SetVector(TargetPos,follower.position);
-
-        follower.position = CeilVector(transform.position,gridScale);
+        if (Vector3.Distance(follower.position,transform.position) > snapDistance)
+        {
+            CeilGrid();
+        }
     }
 
-    private Vector3 CeilVector(Vector3 vector, float size)
+    public void CeilGrid()
+    {
+        mat.SetVector(TargetPos,follower.position);
+        follower.position = CeilVector(transform.position);
+        SnapManager.Instance().OnGridSnap();
+    }
+
+    public static Vector3 CeilVector(Vector3 vector)
     {
         Vector3 v = vector;
         v = new Vector3(Mathf.Round(v.x), Mathf.Round(v.y), Mathf.Round(v.z));
