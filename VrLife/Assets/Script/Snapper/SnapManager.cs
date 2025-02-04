@@ -81,6 +81,12 @@ public class SnapManager : MonoBehaviour
     
     private void LateUpdate()
     {
+        if (targetSnapObject)
+        {
+            fg.leader = targetSnapObject.transform;
+        }
+
+        grabbing = targetTransform;
         if (targetSnapObject == null) return;
         
         if (grabbing)

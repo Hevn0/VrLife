@@ -60,6 +60,6 @@ Material:
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Tint_Close: {r: 0, g: 0.014705896, b: 1, a: 0}
-    - _targetPos: {r: -6.04, g: 0.153, b: -0.848, a: 0}
+    - _targetPos: {r: 1.3682523, g: 1.2195754, b: 6.3819103, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
