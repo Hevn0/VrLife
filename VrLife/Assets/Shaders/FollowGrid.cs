@@ -20,7 +20,7 @@ public class FollowGrid : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(follower.position,transform.position) > snapDistance)
+        if (Vector3.Distance(follower.position,leader.position) > snapDistance)
         {
             CeilGrid();
         }
@@ -28,8 +28,8 @@ public class FollowGrid : MonoBehaviour
 
     public void CeilGrid()
     {
-        mat.SetVector(TargetPos,follower.position);
-        follower.position = CeilVector(transform.position);
+        mat.SetVector(TargetPos,leader.position);
+        follower.position = CeilVector(leader.position);
         SnapManager.Instance().OnGridSnap();
     }
 

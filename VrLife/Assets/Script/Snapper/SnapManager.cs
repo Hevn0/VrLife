@@ -36,6 +36,7 @@ public class SnapManager : MonoBehaviour
     void Start()
     {
         FindObjects();
+        UpdatePositions();
         closestPoint = Vector3.zero;
     }
 
@@ -51,6 +52,7 @@ public class SnapManager : MonoBehaviour
         
         if (lastSnapObject != closestObject)
         {
+            closestObject.updatePositions();
             DrawPos();
             lastSnapObject = closestObject;
         }
