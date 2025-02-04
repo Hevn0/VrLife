@@ -7,7 +7,10 @@ public class Slow : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        rb.velocity *= slowMultiplier;
+        if (other.CompareTag("Bille"))
+        {
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            rb.velocity *= slowMultiplier;
+        }
     }
 }
