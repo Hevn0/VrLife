@@ -12,7 +12,8 @@ public class SnapObject : MonoBehaviour
     {
         Vector3[] directions = {Vector3.up, Vector3.down, Vector3.left, Vector3.right, Vector3.forward, Vector3.back};
         snapPoints = new List<Vector3>();
-        rayLength = SnapManager.Instance().rayLength;
+        float gridScale = SnapManager.Instance().GridScale;
+        rayLength = SnapManager.Instance().rayLength * gridScale;
 
         SnapManager manager = SnapManager.Instance();
         
@@ -22,13 +23,13 @@ public class SnapObject : MonoBehaviour
 
             if (Physics.Raycast(ray, rayLength, manager.ObjectsLayer)) continue;
             
-            snapPoints.Add(transform.position + target);
+            snapPoints.Add(transform.position + (target * gridScale));
         }
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        rayLength = SnapManager.Instance().rayLength;
+        rayLength = SnapManager.Instance().rayLength * SnapManager.Instance().GridScale;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.up * rayLength);
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * rayLength);
         Gizmos.DrawLine(transform.position, transform.position + Vector3.left * rayLength);
