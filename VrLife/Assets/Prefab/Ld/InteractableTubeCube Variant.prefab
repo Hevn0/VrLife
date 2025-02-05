@@ -97,6 +97,50 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_FarAttachMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_AttachEaseInTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_MatchAttachPosition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_Colliders.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_SnapToColliderVolume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: 'm_Colliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 4834527946589764929}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_DistanceCalculationMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -172,6 +216,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 522038566039895753}
   m_SourcePrefab: {fileID: 100100000, guid: 833cb867d186193418fc107735ae3139, type: 3}
+--- !u!64 &4834527946589764929 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
+  m_PrefabInstance: {fileID: 3008620443298257542}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5416756512176617785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
