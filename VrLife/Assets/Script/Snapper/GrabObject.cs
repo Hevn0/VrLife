@@ -6,19 +6,19 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class GrabObject : MonoBehaviour
 {
-    XRPokeInteractor pokeInteractor;
+    XRGrabInteractable grab;
     private bool grabbed;
-    void Start()
+    void OnEnable()
     {
-        pokeInteractor = GetComponent<XRPokeInteractor>();
-        pokeInteractor.selectEntered.AddListener(SetTransform);
-        pokeInteractor.selectExited.AddListener(RemoveTransform);
+        grab = GetComponent<XRGrabInteractable>();
+        grab.selectEntered.AddListener(SetTransform);
+        grab.selectExited.AddListener(RemoveTransform);
     }
 
     private void OnDisable()
     {
-        pokeInteractor.selectEntered.RemoveListener(SetTransform);
-        pokeInteractor.selectExited.RemoveListener(RemoveTransform);
+        grab.selectEntered.RemoveListener(SetTransform);
+        grab.selectExited.RemoveListener(RemoveTransform);
     }
 
     void SetTransform(SelectEnterEventArgs args)
@@ -29,7 +29,10 @@ public class GrabObject : MonoBehaviour
         
         if (found)
         {
-            SnapManager.Instance().targetSnapObject = found;
+            if (SnapManager.Instance().targetSnapObject == null)
+            {
+                SnapManager.Instance().targetSnapObject = found;
+            }
             grabbed = true;
         }
         else
