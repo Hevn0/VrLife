@@ -41,6 +41,11 @@ public class GrabObject : MonoBehaviour
     {
         Transform obj = args.interactableObject.transform;
         Debug.Log("SNAP !!!!");
+        Invoke(nameof(Wait),.2f);
+    }
+
+    private void Wait()
+    {
         SnapManager.Instance().OnDeselect(So);
         SnapManager.Instance().targetSnapObject = null;
     }
