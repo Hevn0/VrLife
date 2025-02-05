@@ -6,6 +6,7 @@ public class SnapObject : MonoBehaviour
 {
     public List<Vector3> snapPoints;
     private float rayLength;
+    public bool grabbed = false;
     
     [ContextMenu("Check Objects")]
     public void updatePositions()

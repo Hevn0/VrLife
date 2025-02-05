@@ -167,14 +167,14 @@ public class SnapManager : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        if (closestObject != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(targetSnapObject.transform.position, closestObject.transform.position);
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(targetSnapObject.transform.position, closestPoint);
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     if (closestObject != null)
+    //     {
+    //         Gizmos.color = Color.green;
+    //         Gizmos.DrawLine(targetSnapObject.transform.position, closestObject.transform.position);
+    //         Gizmos.color = Color.red;
+    //         Gizmos.DrawLine(targetSnapObject.transform.position, closestPoint);
+    //     }
+    // }
 }
