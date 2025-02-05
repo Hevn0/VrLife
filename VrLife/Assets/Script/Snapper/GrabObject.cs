@@ -8,7 +8,7 @@ public class GrabObject : MonoBehaviour
 {
     XRPokeInteractor pokeInteractor;
     private bool grabbed;
-    void Start()
+    void OnEnable()
     {
         pokeInteractor = GetComponent<XRPokeInteractor>();
         pokeInteractor.selectEntered.AddListener(SetTransform);
