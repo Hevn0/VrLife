@@ -1,16 +1,15 @@
-using System;
 using UnityEngine;
 
-public class Speed : MonoBehaviour
+public class Ressort : MonoBehaviour
 {
-    public float speedMultiplier;
+    public float forceMultiplier;
     
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bille"))
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.linearVelocity *= speedMultiplier;
+            rb.AddForce(transform.forward * forceMultiplier, ForceMode.Impulse);
         }
     }
 }
