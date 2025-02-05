@@ -10,7 +10,7 @@ public class Speed : MonoBehaviour
         if (other.CompareTag("Bille"))
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.velocity *= speedMultiplier;
+            rb.linearVelocity *= speedMultiplier;
         }
     }
 }
