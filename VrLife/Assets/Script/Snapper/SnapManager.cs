@@ -86,23 +86,12 @@ public class SnapManager : MonoBehaviour
         
         fg.leader = targetSnapObject.transform;
         
-        if (grabbing)
-        {
-            float dist = Vector3.Distance(targetTransform.position, closestPoint);
-            targetSnapObject.transform.position = dist < (snapToObjectDistance * GridScale) ? closestPoint : targetTransform.position;
-            wasGrabbing = true;
-        }
-        else
-        {
-            if (wasGrabbing && fg)
-            {
-                fg.CeilGrid();
-                OnGridSnap();
-                wasGrabbing = false;
-            }
-            targetSnapObject.transform.position = FollowGrid.CeilVector(targetSnapObject.transform.position);
-        }
-        
+        // if (grabbing)
+        // {
+        //     float dist = Vector3.Distance(targetTransform.position, closestPoint);
+        //     targetSnapObject.transform.position = dist < (snapToObjectDistance * GridScale) ? closestPoint : targetTransform.position;
+        //     wasGrabbing = true;
+        // }
         UpdatePos();
     }
 
@@ -168,7 +157,6 @@ public class SnapManager : MonoBehaviour
     {
         fg.CeilGrid();
         OnGridSnap();
-        wasGrabbing = false;
         so.transform.position = FollowGrid.CeilVector(fg.transform.position);
         RotateNearest(so.transform);
     }
@@ -181,7 +169,7 @@ public class SnapManager : MonoBehaviour
         targetEuler.y = Mathf.Round(targetEuler.y / 90f) * 90f;
         targetEuler.z = Mathf.Round(targetEuler.z / 90f) * 90f;
         
-        transform.rotation = Quaternion.Euler(targetEuler);
+        t.rotation = Quaternion.Euler(targetEuler);
     }
     // private void OnDrawGizmos()
     // {

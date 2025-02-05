@@ -30,13 +30,9 @@ public class GrabObject : MonoBehaviour
         if (found)
         {
             SnapManager.Instance().targetSnapObject = found;
-            So.grabbed = true;
-            grabbed = true;
         }
         else
         {
-            So.grabbed = false;
-            grabbed = false;
             Debug.LogAssertion("No Snap Object Found !");
         }
     }
@@ -44,10 +40,8 @@ public class GrabObject : MonoBehaviour
     public void RemoveTransform(SelectExitEventArgs args)
     {
         Transform obj = args.interactableObject.transform;
-        if (grabbed)
-        {
-            SnapManager.Instance().OnDeselect(So);
-            SnapManager.Instance().targetSnapObject = null;
-        }
+        Debug.Log("SNAP !!!!");
+        SnapManager.Instance().OnDeselect(So);
+        SnapManager.Instance().targetSnapObject = null;
     }
 }
