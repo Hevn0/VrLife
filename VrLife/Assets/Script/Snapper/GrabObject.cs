@@ -6,12 +6,10 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class GrabObject : MonoBehaviour
 {
-    XRPokeInteractor pokeInteractor;
     private bool grabbed;
     private SnapObject So;
     void OnEnable()
     {
-        pokeInteractor = GetComponent<XRPokeInteractor>();
         So = GetComponent<SnapObject>();
         // pokeInteractor.selectEntered.AddListener(SetTransform);
         // pokeInteractor.selectExited.AddListener(RemoveTransform);
@@ -48,7 +46,7 @@ public class GrabObject : MonoBehaviour
         Transform obj = args.interactableObject.transform;
         if (grabbed)
         {
-            FollowGrid.CeilVector(transform.position);
+            SnapManager.Instance().OnDeselect(So);
             SnapManager.Instance().targetSnapObject = null;
         }
     }
