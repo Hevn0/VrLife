@@ -10,7 +10,7 @@ public class Slow : MonoBehaviour
         if (other.CompareTag("Bille"))
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.velocity *= slowMultiplier;
+            rb.linearVelocity *= slowMultiplier;
         }
     }
 }
