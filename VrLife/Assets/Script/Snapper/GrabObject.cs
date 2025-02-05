@@ -8,20 +8,22 @@ public class GrabObject : MonoBehaviour
 {
     XRPokeInteractor pokeInteractor;
     private bool grabbed;
+    private SnapObject So;
     void OnEnable()
     {
         pokeInteractor = GetComponent<XRPokeInteractor>();
-        pokeInteractor.selectEntered.AddListener(SetTransform);
-        pokeInteractor.selectExited.AddListener(RemoveTransform);
+        So = GetComponent<SnapObject>();
+        // pokeInteractor.selectEntered.AddListener(SetTransform);
+        // pokeInteractor.selectExited.AddListener(RemoveTransform);
     }
 
     private void OnDisable()
     {
-        pokeInteractor.selectEntered.RemoveListener(SetTransform);
-        pokeInteractor.selectExited.RemoveListener(RemoveTransform);
+        // pokeInteractor.selectEntered.RemoveListener(SetTransform);
+        // pokeInteractor.selectExited.RemoveListener(RemoveTransform);
     }
 
-    void SetTransform(SelectEnterEventArgs args)
+    public void SetTransform(SelectEnterEventArgs args)
     {
         Transform obj = args.interactableObject.transform;
 
@@ -30,19 +32,23 @@ public class GrabObject : MonoBehaviour
         if (found)
         {
             SnapManager.Instance().targetSnapObject = found;
+            So.grabbed = true;
             grabbed = true;
         }
         else
         {
+            So.grabbed = false;
             grabbed = false;
             Debug.LogAssertion("No Snap Object Found !");
         }
     }
     
-    void RemoveTransform(SelectExitEventArgs args)
+    public void RemoveTransform(SelectExitEventArgs args)
     {
+        Transform obj = args.interactableObject.transform;
         if (grabbed)
         {
+            FollowGrid.CeilVector(transform.position);
             SnapManager.Instance().targetSnapObject = null;
         }
     }
