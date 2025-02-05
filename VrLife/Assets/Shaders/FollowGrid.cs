@@ -7,20 +7,19 @@ public class FollowGrid : MonoBehaviour
     private static readonly int TargetPos = Shader.PropertyToID("_targetPos");
     public GameObject gridObject;
     public int gridSize;
-    public float gridScale;
+    private float gridScale;
     public Transform follower,leader;
     public Material mat;
-    public float snapDistance;
-    
     
     private void OnEnable()
     {
+        gridScale = SnapManager.Instance().GridScale;
         GenerateGrid();
     }
 
     private void Update()
     {
-        if (Vector3.Distance(follower.position,leader.position) > snapDistance)
+        if (leader && Vector3.Distance(follower.position,leader.position) > gridScale)
         {
             CeilGrid();
         }
@@ -35,9 +34,10 @@ public class FollowGrid : MonoBehaviour
 
     public static Vector3 CeilVector(Vector3 vector)
     {
-        Vector3 v = vector;
-        v = new Vector3(Mathf.Round(v.x), Mathf.Round(v.y), Mathf.Round(v.z));
-        return v;
+        float gScale = SnapManager.Instance().GridScale;
+        Vector3 v = vector / gScale;
+        v = new Vector3(Mathf.RoundToInt(v.x), Mathf.RoundToInt(v.y), Mathf.RoundToInt(v.z));
+        return v * gScale;
     }
 
     void GenerateGrid()

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SnapManager : MonoBehaviour
 {
@@ -18,6 +17,7 @@ public class SnapManager : MonoBehaviour
     public bool grabbing;
     private bool wasGrabbing;
     public FollowGrid fg;
+    public float GridScale = 1;
     
     
     public static SnapManager Instance()
@@ -81,10 +81,18 @@ public class SnapManager : MonoBehaviour
     
     private void LateUpdate()
     {
+        if (targetSnapObject)
+        {
+            fg.leader = targetSnapObject.transform;
+        }
+
+        grabbing = targetTransform;
+        if (targetSnapObject == null) return;
+        
         if (grabbing)
         {
             float dist = Vector3.Distance(targetTransform.position, closestPoint);
-            targetSnapObject.transform.position = dist < snapToObjectDistance ? closestPoint : targetTransform.position;
+            targetSnapObject.transform.position = dist < (snapToObjectDistance * GridScale) ? closestPoint : targetTransform.position;
             wasGrabbing = true;
         }
         else
@@ -145,6 +153,7 @@ public class SnapManager : MonoBehaviour
         foreach (Vector3 sp in closestObject.snapPoints)
         {
             GameObject o = Instantiate(debugObject, sp, Quaternion.identity);
+            o.transform.localScale *= GridScale;
             debugObjects.Add(o);
         }
     }

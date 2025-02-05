@@ -39,15 +39,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ALpha: 0.05
+    - _ALpha: 0.1
     - _AddPrecomputedVelocity: 1
     - _AlphaCutoff: 0.5
-    - _ColorPow: -1.07
+    - _ColorPow: 0.1
     - _EnvironmentReflections: 1
-    - _Float1: 0.486
+    - _Float1: 0.482
     - _Float2: 0
-    - _MaxDistance: 2.2
-    - _Powa: 1
+    - _MaxDistance: 0.3
+    - _Powa: 0.99
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
@@ -58,8 +58,8 @@ Material:
     m_Colors:
     - _CubePos: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Tint: {r: 0.6396227, g: 0.9677849, b: 1, a: 0}
-    - _Tint_Close: {r: 0, g: 0.3804426, b: 0.86415094, a: 0}
-    - _targetPos: {r: 2, g: 0, b: 1, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0}
+    - _Tint_Close: {r: 0, g: 0.014705896, b: 1, a: 0}
+    - _targetPos: {r: 1.3682523, g: 1.2195754, b: 6.3819103, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
