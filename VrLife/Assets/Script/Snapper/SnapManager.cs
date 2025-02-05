@@ -167,6 +167,13 @@ public class SnapManager : MonoBehaviour
         }
     }
 
+    public void OnDeselect(SnapObject so)
+    {
+        fg.CeilGrid();
+        OnGridSnap();
+        wasGrabbing = false;
+        so.transform.position = FollowGrid.CeilVector(fg.transform.position);
+    }
     // private void OnDrawGizmos()
     // {
     //     if (closestObject != null)
