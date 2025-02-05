@@ -2,22 +2,23 @@ using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class GrabObject : MonoBehaviour
 {
-    XRGrabInteractable grabInteractable;
+    XRPokeInteractor pokeInteractor;
     private bool grabbed;
     void Start()
     {
-        grabInteractable = GetComponent<XRGrabInteractable>();
-        grabInteractable.selectEntered.AddListener(SetTransform);
-        grabInteractable.selectExited.AddListener(RemoveTransform);
+        pokeInteractor = GetComponent<XRPokeInteractor>();
+        pokeInteractor.selectEntered.AddListener(SetTransform);
+        pokeInteractor.selectExited.AddListener(RemoveTransform);
     }
 
     private void OnDisable()
     {
-        grabInteractable.selectEntered.RemoveListener(SetTransform);
-        grabInteractable.selectExited.RemoveListener(RemoveTransform);
+        pokeInteractor.selectEntered.RemoveListener(SetTransform);
+        pokeInteractor.selectExited.RemoveListener(RemoveTransform);
     }
 
     void SetTransform(SelectEnterEventArgs args)
