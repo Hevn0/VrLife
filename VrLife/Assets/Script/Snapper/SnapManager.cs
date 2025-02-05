@@ -81,13 +81,10 @@ public class SnapManager : MonoBehaviour
     
     private void LateUpdate()
     {
-        if (targetSnapObject && !fg.leader)
-        {
-            fg.leader = targetSnapObject.transform;
-        }
-
         grabbing = targetTransform;
         if (targetSnapObject == null) return;
+        
+        fg.leader = targetSnapObject.transform;
         
         if (grabbing)
         {
@@ -173,6 +170,18 @@ public class SnapManager : MonoBehaviour
         OnGridSnap();
         wasGrabbing = false;
         so.transform.position = FollowGrid.CeilVector(fg.transform.position);
+        RotateNearest(so.transform);
+    }
+
+    private void RotateNearest(Transform t)
+    {
+        Vector3 targetEuler = t.rotation.eulerAngles;
+        
+        targetEuler.x = Mathf.Round(targetEuler.x / 90f) * 90f;
+        targetEuler.y = Mathf.Round(targetEuler.y / 90f) * 90f;
+        targetEuler.z = Mathf.Round(targetEuler.z / 90f) * 90f;
+        
+        transform.rotation = Quaternion.Euler(targetEuler);
     }
     // private void OnDrawGizmos()
     // {
