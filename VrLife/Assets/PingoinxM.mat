@@ -38,6 +38,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
+    - _Offset: 0.25
     - _Stencil: 0
     - _StencilComp: 8
     - _StencilOp: 0
@@ -46,5 +47,6 @@ Material:
     - _UseUIAlphaClip: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color0: {r: 1, g: 0.9727325, b: 0.04313723, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
