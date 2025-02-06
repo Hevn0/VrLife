@@ -54,15 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011269509830436403, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.149
+      value: 0.14999999
       objectReference: {fileID: 0}
     - target: {fileID: 2011269509830436403, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.149
+      value: 0.14999999
       objectReference: {fileID: 0}
     - target: {fileID: 2011269509830436403, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.149
+      value: 0.14999999
       objectReference: {fileID: 0}
     - target: {fileID: 4834527946589764929, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_Material
@@ -73,7 +73,8 @@ PrefabInstance:
       value: InteractableTubeCube Fast
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4440297335565505223, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5416756512176617785, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
