@@ -226,7 +226,7 @@ PrefabInstance:
       addedObject: {fileID: 522038566039895753}
     - targetCorrespondingSourceObject: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6219119650823683223}
+      addedObject: {fileID: 323432417575623695}
   m_SourcePrefab: {fileID: 100100000, guid: 833cb867d186193418fc107735ae3139, type: 3}
 --- !u!64 &4834527946589764929 stripped
 MeshCollider:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e30ca8aa828e446becc540eb0e5b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6219119650823683223
+--- !u!114 &323432417575623695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
