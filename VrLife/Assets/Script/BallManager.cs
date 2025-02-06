@@ -18,6 +18,9 @@ public class BallManager : MonoBehaviour
     {
         rb1 = ball1.GetComponent<Rigidbody>();
         rb2 = ball2.GetComponent<Rigidbody>();
+        
+        rb1.isKinematic = true;
+        rb2.isKinematic = true;
     }
 
     public void ResetBallToSpawn()
