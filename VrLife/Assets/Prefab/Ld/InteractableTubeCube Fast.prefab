@@ -64,9 +64,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 4834527946589764929, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 383881049fd1b1b429ecd59d1f646486, type: 2}
     - target: {fileID: 5416756512176617785, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_Name
-      value: InteractableTubeCube (10) Variant
+      value: InteractableTubeCube Fast
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
