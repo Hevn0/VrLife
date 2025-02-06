@@ -26,7 +26,7 @@ public class SpawnTrigger : MonoBehaviour
         if (other.CompareTag("Bille"))
         {
             r.GetPropertyBlock(mp);
-            mp.SetInt(CheckpointOn,1);
+            mp.SetInt(CheckpointOn,0);
             r.SetPropertyBlock(mp);
             
             switch (triggerType)
@@ -49,7 +49,7 @@ public class SpawnTrigger : MonoBehaviour
     private void OnDisable()
     {
         r.GetPropertyBlock(mp);
-        mp.SetInt(CheckpointOn,0);
+        mp.SetInt(CheckpointOn,1);
         r.SetPropertyBlock(mp);
     }
 }
