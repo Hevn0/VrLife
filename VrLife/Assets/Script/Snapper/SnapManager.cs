@@ -54,7 +54,7 @@ public class SnapManager : MonoBehaviour
         if (lastSnapObject != closestObject)
         {
             closestObject.updatePositions();
-            DrawPos();
+            //DrawPos();
             lastSnapObject = closestObject;
         }
         closestPoint = GetClosestPoint(out distanceToClosestPoint);
@@ -93,7 +93,7 @@ public class SnapManager : MonoBehaviour
         //     targetSnapObject.transform.position = dist < (snapToObjectDistance * GridScale) ? closestPoint : targetTransform.position;
         //     wasGrabbing = true;
         // }
-        UpdatePos();
+        //UpdatePos();
     }
 
     private SnapObject GetClosestSnapObject()
