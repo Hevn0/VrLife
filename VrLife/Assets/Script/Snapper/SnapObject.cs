@@ -7,7 +7,13 @@ public class SnapObject : MonoBehaviour
     public List<Vector3> snapPoints;
     private float rayLength;
     public bool grabbed = false;
-    
+
+    private void Start()
+    {
+        SnapManager.Instance().snapObjects.Add(this);
+        updatePositions();
+    }
+
     [ContextMenu("Check Objects")]
     public void updatePositions()
     {

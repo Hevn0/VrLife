@@ -18,6 +18,7 @@ public class SnapManager : MonoBehaviour
     private bool wasGrabbing;
     public FollowGrid fg;
     public float GridScale = 1;
+    public float waitTime;
     
     
     public static SnapManager Instance()

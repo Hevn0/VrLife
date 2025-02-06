@@ -3,25 +3,38 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    public Transform pointSpawn;
-    public GameObject ball;
+    [Header("Balls")]
+    public GameObject ball1;
+    public GameObject ball2;
     
-    private Rigidbody rb;
+    [Header("SpawnPoint")]
+    public Transform pointSpawn1;
+    public Transform pointSpawn2;
+    
+    private Rigidbody rb1;
+    private Rigidbody rb2;
 
     private void Start()
     {
-        rb = ball.GetComponent<Rigidbody>();
+        rb1 = ball1.GetComponent<Rigidbody>();
+        rb2 = ball2.GetComponent<Rigidbody>();
     }
 
     public void ResetBallToSpawn()
     {
-        rb.linearVelocity = Vector3.zero;
-        rb.isKinematic = true;
-        ball.transform.position = pointSpawn.position;
+        rb1.linearVelocity = Vector3.zero;
+        rb2.linearVelocity = Vector3.zero;
+        
+        rb1.isKinematic = true;
+        rb2.isKinematic = true;
+        
+        ball1.transform.position = pointSpawn1.position;
+        ball2.transform.position = pointSpawn2.position;
     }
 
     public void LaunchBall()
     {
-        rb.isKinematic = false;
+        rb1.isKinematic = false;
+        rb2.isKinematic = false;
     }
 }

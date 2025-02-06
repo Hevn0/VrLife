@@ -40,8 +40,7 @@ public class GrabObject : MonoBehaviour
     public void RemoveTransform(SelectExitEventArgs args)
     {
         Transform obj = args.interactableObject.transform;
-        Debug.Log("SNAP !!!!");
-        Invoke(nameof(Wait),.2f);
+        Invoke(nameof(Wait),SnapManager.Instance().waitTime);
     }
 
     private void Wait()
