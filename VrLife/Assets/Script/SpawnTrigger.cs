@@ -8,6 +8,7 @@ public class SpawnTrigger : MonoBehaviour
         CheckPoint1,
         CheckPoint2,
         CheckPoint3,
+        fin
     }
 
     public TriggerType triggerType;
@@ -26,6 +27,9 @@ public class SpawnTrigger : MonoBehaviour
                     break;
                 case TriggerType.CheckPoint3:
                     SpawnPoint.instance.UnlockCheckPoint3();
+                    break;
+                case TriggerType.fin:
+                    // Faire une fin 
                     break;
             }
         }
