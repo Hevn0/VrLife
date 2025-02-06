@@ -14,7 +14,6 @@ Shader "GlaceShaderSK"
 		_22("22", Float) = 0
 		_Emissive("Emissive", 2D) = "white" {}
 		[HDR]_EmiColor("EmiColor", Color) = (1,1,1)
-		[PerRendererData][IntRange]_CheckpointON("CheckpointON", Range( 0 , 1)) = 0
 		[HideInInspector] _texcoord( "", 2D ) = "white" {}
 
 
@@ -313,7 +312,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -561,23 +559,19 @@ Shader "GlaceShaderSK"
 
 				float2 uv_BaseColor = input.ase_texcoord9.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				float4 tex2DNode12 = tex2D( _BaseColor, uv_BaseColor );
-				float grayscale40 = Luminance(tex2DNode12.rgb);
-				float3 temp_cast_0 = (grayscale40).xxx;
-				float3 lerpResult46 = lerp( temp_cast_0 , tex2DNode12.rgb , _CheckpointON);
 				
 				float2 uv_Normal = input.ase_texcoord9.xy * _Normal_ST.xy + _Normal_ST.zw;
 				
 				float2 uv_Emissive = input.ase_texcoord9.xy * _Emissive_ST.xy + _Emissive_ST.zw;
-				float3 lerpResult45 = lerp( float3( 0,0,0 ) , ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb ) , _CheckpointON);
 				
 				float2 uv_Roughness = input.ase_texcoord9.xy * _Roughness_ST.xy + _Roughness_ST.zw;
 				
 				float2 uv_Opacity = input.ase_texcoord9.xy * _Opacity_ST.xy + _Opacity_ST.zw;
 				
 
-				float3 BaseColor = lerpResult46;
+				float3 BaseColor = tex2DNode12.rgb;
 				float3 Normal = UnpackNormalScale( tex2D( _Normal, uv_Normal ), 1.0f );
-				float3 Emission = lerpResult45;
+				float3 Emission = ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb );
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = min( ( 1.0 - tex2D( _Roughness, uv_Roughness ).r ) , _RoughnessFlat );
@@ -923,7 +917,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -1239,7 +1232,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -1526,7 +1518,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -1728,18 +1719,14 @@ Shader "GlaceShaderSK"
 
 				float2 uv_BaseColor = input.ase_texcoord4.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				float4 tex2DNode12 = tex2D( _BaseColor, uv_BaseColor );
-				float grayscale40 = Luminance(tex2DNode12.rgb);
-				float3 temp_cast_0 = (grayscale40).xxx;
-				float3 lerpResult46 = lerp( temp_cast_0 , tex2DNode12.rgb , _CheckpointON);
 				
 				float2 uv_Emissive = input.ase_texcoord4.xy * _Emissive_ST.xy + _Emissive_ST.zw;
-				float3 lerpResult45 = lerp( float3( 0,0,0 ) , ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb ) , _CheckpointON);
 				
 				float2 uv_Opacity = input.ase_texcoord4.xy * _Opacity_ST.xy + _Opacity_ST.zw;
 				
 
-				float3 BaseColor = lerpResult46;
-				float3 Emission = lerpResult45;
+				float3 BaseColor = tex2DNode12.rgb;
+				float3 Emission = ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb );
 				float Alpha = ( tex2D( _Opacity, uv_Opacity ).r + _22 );
 				float AlphaClipThreshold = 0.5;
 
@@ -1837,7 +1824,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -2018,14 +2004,11 @@ Shader "GlaceShaderSK"
 
 				float2 uv_BaseColor = input.ase_texcoord2.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				float4 tex2DNode12 = tex2D( _BaseColor, uv_BaseColor );
-				float grayscale40 = Luminance(tex2DNode12.rgb);
-				float3 temp_cast_0 = (grayscale40).xxx;
-				float3 lerpResult46 = lerp( temp_cast_0 , tex2DNode12.rgb , _CheckpointON);
 				
 				float2 uv_Opacity = input.ase_texcoord2.xy * _Opacity_ST.xy + _Opacity_ST.zw;
 				
 
-				float3 BaseColor = lerpResult46;
+				float3 BaseColor = tex2DNode12.rgb;
 				float Alpha = ( tex2D( _Opacity, uv_Opacity ).r + _22 );
 				float AlphaClipThreshold = 0.5;
 
@@ -2135,7 +2118,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -2519,7 +2501,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -2767,23 +2748,19 @@ Shader "GlaceShaderSK"
 
 				float2 uv_BaseColor = input.ase_texcoord9.xy * _BaseColor_ST.xy + _BaseColor_ST.zw;
 				float4 tex2DNode12 = tex2D( _BaseColor, uv_BaseColor );
-				float grayscale40 = Luminance(tex2DNode12.rgb);
-				float3 temp_cast_0 = (grayscale40).xxx;
-				float3 lerpResult46 = lerp( temp_cast_0 , tex2DNode12.rgb , _CheckpointON);
 				
 				float2 uv_Normal = input.ase_texcoord9.xy * _Normal_ST.xy + _Normal_ST.zw;
 				
 				float2 uv_Emissive = input.ase_texcoord9.xy * _Emissive_ST.xy + _Emissive_ST.zw;
-				float3 lerpResult45 = lerp( float3( 0,0,0 ) , ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb ) , _CheckpointON);
 				
 				float2 uv_Roughness = input.ase_texcoord9.xy * _Roughness_ST.xy + _Roughness_ST.zw;
 				
 				float2 uv_Opacity = input.ase_texcoord9.xy * _Opacity_ST.xy + _Opacity_ST.zw;
 				
 
-				float3 BaseColor = lerpResult46;
+				float3 BaseColor = tex2DNode12.rgb;
 				float3 Normal = UnpackNormalScale( tex2D( _Normal, uv_Normal ), 1.0f );
-				float3 Emission = lerpResult45;
+				float3 Emission = ( _EmiColor * tex2D( _Emissive, uv_Emissive ).rgb );
 				float3 Specular = 0.5;
 				float Metallic = 0;
 				float Smoothness = min( ( 1.0 - tex2D( _Roughness, uv_Roughness ).r ) , _RoughnessFlat );
@@ -2979,7 +2956,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -3242,7 +3218,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -3515,7 +3490,6 @@ Shader "GlaceShaderSK"
 			float4 _Roughness_ST;
 			float4 _Opacity_ST;
 			float3 _EmiColor;
-			float _CheckpointON;
 			float _RoughnessFlat;
 			float _22;
 			#ifdef ASE_TRANSMISSION
@@ -3657,9 +3631,9 @@ Node;AmplifyShaderEditor.SimpleAddOpNode;20;-32,576;Inherit;False;2;2;0;FLOAT;0;
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;35;608,-208;Inherit;True;2;2;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.SamplerNode;33;224,-288;Inherit;True;Property;_Emissive;Emissive;6;0;Create;True;0;0;0;False;0;False;-1;d8bdda4c9c6c766479d3efca5a9c0585;d8bdda4c9c6c766479d3efca5a9c0585;True;0;False;white;Auto;False;Object;-1;Auto;Texture2D;8;0;SAMPLER2D;;False;1;FLOAT2;0,0;False;2;FLOAT;0;False;3;FLOAT2;0,0;False;4;FLOAT2;0,0;False;5;FLOAT;1;False;6;FLOAT;0;False;7;SAMPLERSTATE;;False;6;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4;FLOAT3;5
 Node;AmplifyShaderEditor.TFHCGrayscale;40;608,32;Inherit;False;0;1;0;FLOAT3;0,0,0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.LerpOp;46;1024,-208;Inherit;False;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.RangedFloatNode;44;608,192;Inherit;False;Property;_CheckpointON;CheckpointON;8;2;[PerRendererData];[IntRange];Create;True;0;0;0;False;0;False;0;0;0;1;0;1;FLOAT;0
-Node;AmplifyShaderEditor.LerpOp;45;1024,-32;Inherit;False;3;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT;0;False;1;FLOAT3;0
+Node;AmplifyShaderEditor.LerpOp;45;1024,-32;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0
+Node;AmplifyShaderEditor.LerpOp;46;1024,-208;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;1;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ExtraPrePass;0;0;ExtraPrePass;5;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;True;1;1;False;;0;False;;0;1;False;;0;False;;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;True;True;True;True;0;False;;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;0;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;3;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;ShadowCaster;0;2;ShadowCaster;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;False;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;True;3;False;;False;True;1;LightMode=ShadowCaster;False;False;0;;0;0;Standard;0;False;0
 Node;AmplifyShaderEditor.TemplateMultiPassMasterNode;4;0,0;Float;False;False;-1;3;UnityEditor.ShaderGraphLitGUI;0;1;New Amplify Shader;94348b07e5e8bab40bd6c8a1e3df54cd;True;DepthOnly;0;3;DepthOnly;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;True;0;False;;False;False;False;False;False;False;False;False;False;True;False;0;False;;255;False;;255;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;0;False;;False;True;1;False;;True;3;False;;True;True;0;False;;0;False;;True;4;RenderPipeline=UniversalPipeline;RenderType=Opaque=RenderType;Queue=Geometry=Queue=0;UniversalMaterialType=Lit;True;5;True;12;all;0;False;False;False;False;False;False;False;False;False;False;False;False;True;0;False;;False;False;False;True;True;False;False;False;0;False;;False;False;False;False;False;False;False;False;False;True;1;False;;False;False;True;1;LightMode=DepthOnly;False;False;0;;0;0;Standard;0;False;0
@@ -3679,15 +3653,13 @@ WireConnection;20;1;21;0
 WireConnection;35;0;34;0
 WireConnection;35;1;33;5
 WireConnection;40;0;12;5
-WireConnection;46;0;40;0
-WireConnection;46;1;12;5
-WireConnection;46;2;44;0
-WireConnection;45;1;35;0
 WireConnection;45;2;44;0
-WireConnection;2;0;46;0
+WireConnection;46;0;40;0
+WireConnection;46;2;44;0
+WireConnection;2;0;12;5
 WireConnection;2;1;13;0
-WireConnection;2;2;45;0
+WireConnection;2;2;35;0
 WireConnection;2;4;19;0
 WireConnection;2;6;20;0
 ASEEND*/
-//CHKSM=96497368EEA239447EA7519AE921DB859FC50724
+//CHKSM=C9C0F8209D8291C827BE796EA321018988DD4ECE

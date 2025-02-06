@@ -32,4 +32,11 @@ public class SpawnPoint : MonoBehaviour
     {
         CheckPoint6.SetActive(false);
     }
+
+    public void ResetCheckPoint()
+    {
+        CheckPoint2.SetActive(true);
+        CheckPoint4.SetActive(true);
+        CheckPoint6.SetActive(true);
+    }
 }
