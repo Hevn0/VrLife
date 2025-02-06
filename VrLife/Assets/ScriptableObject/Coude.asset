@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Coude
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 2624966182186524288, guid: 9929be4290596bf4593625ab9db48862, type: 3}
-  maxCount: 10
+  maxCount: 20

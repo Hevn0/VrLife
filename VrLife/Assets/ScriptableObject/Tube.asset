@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Tube
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 5416756512176617785, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
-  maxCount: 10
+  maxCount: 20

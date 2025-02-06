@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Slow Tube
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 2423457578537421952, guid: 3fe894730cd192344860ddc3f248462f, type: 3}
-  maxCount: 10
+  maxCount: 20

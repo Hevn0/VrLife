@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eea923516ddf22d4da954a12122846b1, type: 3}
-  m_Name: Fast Tube
+  m_Name: Ressort
   m_EditorClassIdentifier: 
-  cubePrefab: {fileID: 449293750488867764, guid: b4009761fd491074e938ee25127211f7, type: 3}
+  cubePrefab: {fileID: 2624966182186524288, guid: bb9c1e3ba35872e4ab46871586eafd07, type: 3}
   maxCount: 20
