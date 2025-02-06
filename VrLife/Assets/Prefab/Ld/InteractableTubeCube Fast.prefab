@@ -65,6 +65,10 @@ PrefabInstance:
       value: 0.14999999
       objectReference: {fileID: 0}
     - target: {fileID: 4834527946589764929, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1550514412580984892, guid: 3103045eab81a034082221a6f6b83781, type: 3}
+    - target: {fileID: 4834527946589764929, guid: a1b737c8fef85f945a1c8ee28e183d75, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 383881049fd1b1b429ecd59d1f646486, type: 2}

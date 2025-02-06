@@ -207,7 +207,7 @@ PrefabInstance:
     - target: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -4010498626681200580, guid: 3103045eab81a034082221a6f6b83781, type: 3}
+      objectReference: {fileID: -1550514412580984892, guid: 3103045eab81a034082221a6f6b83781, type: 3}
     - target: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Convex
       value: 0

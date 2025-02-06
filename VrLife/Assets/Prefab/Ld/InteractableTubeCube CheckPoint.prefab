@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5080390055616544063
+--- !u!1001 &3008620443298257542
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 398121313250456336, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4493585093827132993, guid: 675d9023695b3744aba9eb2b6d129894, type: 3}
+      objectReference: {fileID: -1550514412580984892, guid: 3103045eab81a034082221a6f6b83781, type: 3}
     - target: {fileID: 690599092826913418, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Size.x
       value: 0.3
@@ -31,18 +31,18 @@ PrefabInstance:
     - target: {fileID: 2477716950891808730, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1299e0e57599f4d4d81688cadbf47537, type: 2}
+      objectReference: {fileID: 2100000, guid: 4dfdfb9f0f0266845b6ac58bee642fc9, type: 2}
     - target: {fileID: 3614616631432527029, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.14999999
+      value: 0.149
       objectReference: {fileID: 0}
     - target: {fileID: 3614616631432527029, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.14999999
+      value: 0.149
       objectReference: {fileID: 0}
     - target: {fileID: 3614616631432527029, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.14999999
+      value: 0.149
       objectReference: {fileID: 0}
     - target: {fileID: 3614616631432527029, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164222508261582693, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.79
+      value: -1.277
       objectReference: {fileID: 0}
     - target: {fileID: 4164222508261582693, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalPosition.y
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4164222508261582693, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.268
+      value: -0.189
       objectReference: {fileID: 0}
     - target: {fileID: 4164222508261582693, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_LocalRotation.w
@@ -105,6 +105,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
+      propertyPath: m_FarAttachMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_ThrowOnDetach
       value: 0
       objectReference: {fileID: 0}
@@ -135,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: 'm_Colliders.Array.data[0]'
       value: 
-      objectReference: {fileID: 3194844345842293496}
+      objectReference: {fileID: 4834527946589764929}
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_DistanceCalculationMode
       value: 2
@@ -159,11 +163,11 @@ PrefabInstance:
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8061208831824037643}
+      objectReference: {fileID: 522038566039895753}
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8061208831824037643}
+      objectReference: {fileID: 522038566039895753}
     - target: {fileID: 5561339668604436703, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -198,12 +202,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Name
-      value: InteractableCoubeCube Variant
+      value: InteractableTubeCube CheckPoint
       objectReference: {fileID: 0}
     - target: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 4493585093827132993, guid: 675d9023695b3744aba9eb2b6d129894, type: 3}
+      objectReference: {fileID: -1550514412580984892, guid: 3103045eab81a034082221a6f6b83781, type: 3}
     - target: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
       propertyPath: m_Convex
       value: 0
@@ -219,35 +223,40 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8061208831824037643}
+      addedObject: {fileID: 522038566039895753}
     - targetCorrespondingSourceObject: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8080053070190399193}
+      addedObject: {fileID: 6219119650823683223}
   m_SourcePrefab: {fileID: 100100000, guid: 833cb867d186193418fc107735ae3139, type: 3}
---- !u!1 &2624966182186524288 stripped
+--- !u!64 &4834527946589764929 stripped
+MeshCollider:
+  m_CorrespondingSourceObject: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
+  m_PrefabInstance: {fileID: 3008620443298257542}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5416756512176617785 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7128330710180914111, guid: 833cb867d186193418fc107735ae3139, type: 3}
-  m_PrefabInstance: {fileID: 5080390055616544063}
+  m_PrefabInstance: {fileID: 3008620443298257542}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8061208831824037643
+--- !u!114 &522038566039895753
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624966182186524288}
+  m_GameObject: {fileID: 5416756512176617785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20e30ca8aa828e446becc540eb0e5b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8080053070190399193
+--- !u!114 &6219119650823683223
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2624966182186524288}
+  m_GameObject: {fileID: 5416756512176617785}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 078f5d4e6f470b644b515769f049a777, type: 3}
@@ -255,8 +264,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   snapPoints: []
   grabbed: 0
---- !u!64 &3194844345842293496 stripped
-MeshCollider:
-  m_CorrespondingSourceObject: {fileID: 7698751657578538951, guid: 833cb867d186193418fc107735ae3139, type: 3}
-  m_PrefabInstance: {fileID: 5080390055616544063}
-  m_PrefabAsset: {fileID: 0}
