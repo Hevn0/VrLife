@@ -9,7 +9,7 @@ public class Ressort : MonoBehaviour
         if (other.CompareTag("Bille"))
         {
             Rigidbody rb = other.GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * forceMultiplier, ForceMode.Impulse);
+            rb.AddForce(transform.up * forceMultiplier, ForceMode.Impulse);
         }
     }
 }
